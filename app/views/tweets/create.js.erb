@@ -1,2 +1,4 @@
 document.querySelector("#tweets").insertAdjacentHTML("afterBegin", "<%=j render @tweet %>")
-document.querySelector("#tweet_body").value = ""
+var element = document.querySelector("#tweet_body")
+element.value = ""
+element.dispatchEvent(new Event('keyup'))
