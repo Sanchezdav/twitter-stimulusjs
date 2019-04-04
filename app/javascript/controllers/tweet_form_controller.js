@@ -19,5 +19,18 @@ export default class extends Controller {
     }
 
     this.characterCountTarget.textContent = message
+
+    if (count > 140) {
+      this.characterCountTarget.classList.add("text-danger");
+    } else {
+      this.characterCountTarget.classList.remove("text-danger");
+    }
+  }
+
+  submit(event) {
+    var count = this.bodyTarget.value.length;
+    if (count > 140) {
+      event.preventDefault()
+    }
   }
 }
